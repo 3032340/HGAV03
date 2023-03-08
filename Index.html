@@ -2,38 +2,63 @@
 <html>
 <head>
     <link rel="stylesheet" href="CSS/main.css">
-
+    
     <title>Page Title</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+crossorigin=""/>
+
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+crossorigin=""></script>
+
+
 </head>
 
     <body>
-        <div class="erehoofd">
-            <H1>Eredivisie</H1>
-            <p>Alles wat je maar wil weten van de Eredivisie is hier te vinden</p>
-        </div>
-       
-        <div class="intro">
-            <p> Tekst over wat de Eredivisie inhoud </p>
-        </div>
-       
-        <div class="Kaartstadion">
-            <p>Hier komt een kaart met waar alle stadions liggen van de clubs uit Eredivisie</p>
-        </div>
-       
-        <div class="tekstkaartstadion">
-            <p>Hier komt een beetje tekst te staan over wat er op de kaart te zien is.</p>
-        </div>
-       
-        <div class="top5clubs">
-            <p>Hier komen logo's van de top 5 clubs van Nederland op dit moment.</p>
-        </div>
-        
-        <div class="tekstvermogen">
-            <p>Hier komt tekst over wat er in de tabel te zien is.</p>
-        </div>
-        <div class="tabelvermogen">
-            <p>Hier komt een tabel waarin het vermogen van de clubs is te zien.</p>
-        </div>
+       <div class="hero">
 
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="Vid/pexels-tima-miroshnichenko-6077725.mp4" type="video/mp4">
+            </video>
+
+            <nav>
+                <img src="img/elogo.png" class="logo">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Home</a></li>
+                    </ul>
+            </nav>
+        <div class="content">
+            <h1>Eredivisie</h1>
+            <a href="#">Ontdek de Eredivisie</a>
+        </div>
+       </div>
+
+       <div class="info-eredivisie">
+        <p>Hier komt info te staan over de Eredivisie.</p>
+       </div>
+       
+       <div class="stadions">
+            <div id="map"></div>
+             <div class="stadiontekst">
+                <p>Hier komt teskt over de stadions</p>
+            </div>
+        </div>
     </body>
+
+    <script>
+        var map = L.map('map').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+
+    </script>
+
 </html>
