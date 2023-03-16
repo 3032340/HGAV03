@@ -99,3 +99,34 @@ nav ul li a{
     background-color: blue;
     display: flex;
 }
+
+/* Text top 5 clubs */
+.topclubtext{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* fotos van top 5 clubs */
+
+#fotoclubs{
+    display: grid;
+    background-color: rgb(225, 233, 233);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    height: 300px;
+}
+
+#fotoclubs p{
+    padding: 10px;
+    border: 2px solid white;
+    text-align: center;
+}
+
+#fotoclubs p img{
+    height: 220px;
+    width: 400px;
+    margin-top: 30px;
+    display: block;
+   
+}
