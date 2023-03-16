@@ -100,6 +100,10 @@ nav ul li a{
     display: flex;
 }
 
+#gemeentetekst{
+    color: #fff;
+}
+
 /* Text top 5 clubs */
 .topclubtext{
     text-align: center;
@@ -128,6 +132,14 @@ nav ul li a{
     width: 400px;
     margin-top: 30px;
     display: block;
-   
 }
 
+/* Stadion locaties tekst */
+
+.locatie{
+    padding-top: 10px;
+    padding-left: 10px;
+    height: 300px;
+}
+
+/* Stadion locatie kaart */
