@@ -60,3 +60,21 @@ fetch(mijnEersteAPIrequest, {})
         map.flyTo(centerCoordinates.coordinates.reverse());
 
         } )
+
+       //Arcgis kaart//
+
+    require(["esri/config", "esri/Map", "esri/views/MapView"], function (esriConfig, Map, MapView){
+        
+        esriConfig.apiKey = "AAPK6aee547fed8743aab40dfa36970a3933nhI5nmaqiL8F-y5QfBlWuZikfsCqFWUst0QTuJt7gHgCRwoiBl7E_oSPa0kZhTfs";
+        
+        const arcGisMap = new Map({
+          basemap: "arcgis-topographic" // Basemap layer // 
+        });
+  
+        const View = new MapView({
+          map: arcGisMap,
+          center: [-118.805, 34.027],
+          zoom: 13, // scale: 72223.819286//
+          container: "arcGisMap",
+        });
+    });

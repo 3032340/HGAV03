@@ -115,7 +115,7 @@ nav ul li a{
 
 #fotoclubs{
     display: grid;
-    background-color: rgb(225, 233, 233);
+    background-color: rgb(207, 211, 211);
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     height: 300px;
@@ -132,7 +132,10 @@ nav ul li a{
     width: 400px;
     margin-top: 30px;
     display: block;
+    align-items: center;
+    margin-left: 27px;
 }
+
 
 /* Stadion locaties tekst */
 
@@ -143,3 +146,8 @@ nav ul li a{
 }
 
 /* Stadion locatie kaart */
+
+#arcGisMap{
+    height: 400px;
+    width: 400px;
+}

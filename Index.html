@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="CSS/main.css">
     
-    <title>Page Title</title>
+    <title>Eredivisie</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
 integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -15,6 +15,8 @@ crossorigin=""></script>
 
 <script src="https://cdn.jsdelivr.net/npm/terraformer"></script>
 <script src="https://unpkg.com/@terraformer/wkt"></script>
+
+<link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
 
 </head>
 
@@ -77,20 +79,18 @@ crossorigin=""></script>
         </div>
         
         <div class="locatie">
+            <div id="locatietekst">
             <p>Stadion locaties weergegeven.</p>
         </div>
 
-        
-
+        <div id="arcGisMap"></div>
 
 
 
     </body>
 
-    
-    <script src="JS/Maps.js">
-
-    </script>
+    <script src="https://js.arcgis.com/4.26/"></script>
+    <script src="JS/Maps.js"></script>
   
 
 </html>
