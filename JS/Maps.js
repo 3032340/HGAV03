@@ -77,4 +77,22 @@ fetch(mijnEersteAPIrequest, {})
           zoom: 13, // scale: 72223.819286//
           container: "arcGisMap",
         });
+
     });
+
+    //eigen edivisiekaart//
+
+    require(["esri/config","esri/WebMap","esri/views/MapView","esri/widgets/ScaleBar","esri/widgets/Legend"], function(esriConfig, WebMap, MapView, ScaleBar, Legend) {
+    
+    esriConfig.apiKey = "AAPK6aee547fed8743aab40dfa36970a3933nhI5nmaqiL8F-y5QfBlWuZikfsCqFWUst0QTuJt7gHgCRwoiBl7E_oSPa0kZhTfs";
+    
+    const webMap = new webMap({
+        portalItem: {
+          id: "b5372c88624e4367808bb8eb85823ad1"
+        }
+      });
+    
+    const view = new MapView({
+        container: "viewDiv",
+        map: webMap
+    });})
