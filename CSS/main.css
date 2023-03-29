@@ -107,17 +107,18 @@ nav ul li a{
 /* Text top 5 clubs */
 .topclubtext{
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
-/* fotos van top 5 clubs */
+/* fotos van top 4 clubs */
 
 #fotoclubs{
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     background-color: rgb(207, 211, 211);
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    width: 100%;
     height: 300px;
 }
 
@@ -128,31 +129,39 @@ nav ul li a{
 }
 
 #fotoclubs p img{
-    height: 220px;
-    width: 400px;
-    margin-top: 30px;
-    display: block;
-    align-items: center;
-    margin-left: 27px;
+    display: flex;
+    height: 250px;
+   flex-shrink: 0;
+   
 }
+
 
 
 /* Stadion locaties tekst */
 
 .locatie{
-    padding-top: 10px;
-    padding-left: 10px;
-    height: 300px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    
+}
+
+#locatietekst{
+    background-color: rgb(8, 247, 168);
+    display: flex;
 }
 
 /* Stadion locatie kaart */
 
-#arcGisMap{
-    height: 400px;
-    width: 400px;
+#clubkaart{
+    margin: 40px;
+    justify-self: stretch;
 }
 
-#viewDiv{
-    height: 400px;
-    width: 400px;
+/* Visualisaties*/
+
+#capaciteit{
+   margin-left: 10px; 
+    width: 3vh;
 }

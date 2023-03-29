@@ -1,17 +1,17 @@
 // leaflet kaart
 
-var map = L.map('leafletmap').setView([51.505, -0.09], 13);
+var leafmap = L.map('leafletmap').setView([51.505, -0.09], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 maxZoom: 19,
 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+}).addTo(leafmap);
 
 
-let mijnGeojsonLaag = L.geoJSON().addTo(map); 
+let mijnGeojsonLaag = L.geoJSON().addTo(leafmap); 
 
-let woonplaatsen = ['Amersfoort','soesterberg','almere']
-let woonplaatsNaam = woonplaatsen[2]
+let woonplaatsen = ['Amersfoort','zeist','almere']
+let woonplaatsNaam = woonplaatsen[1]
 
 fetch(`https://api.pdok.nl/bzk/locatieserver/search/v3_1/free?q=${woonplaatsNaam}&rows=10`)
     .then(response => response.json())
@@ -38,7 +38,7 @@ fetch(`https://api.pdok.nl/bzk/locatieserver/search/v3_1/free?q=${woonplaatsNaam
         
         let centerCoordinates = Terraformer.wktToGeoJSON(data.response.docs[0].centroide_ll);
         console.log(centerCoordinates);
-        map.flyTo(centerCoordinates.coordinates.reverse());
+        leafmap.flyTo(centerCoordinates.coordinates.reverse());
 
         } )
     }
@@ -57,42 +57,35 @@ fetch(mijnEersteAPIrequest, {})
         
         let centerCoordinates = Terraformer.wktToGeoJSON(data.response.docs[0].centroide_ll);
         console.log(centerCoordinates);
-        map.flyTo(centerCoordinates.coordinates.reverse());
+        leafmap.flyTo(centerCoordinates.coordinates.reverse());
 
         } )
 
-       //Arcgis kaart//
-
-    require(["esri/config", "esri/Map", "esri/views/MapView"], function (esriConfig, Map, MapView){
-        
-        esriConfig.apiKey = "AAPK6aee547fed8743aab40dfa36970a3933nhI5nmaqiL8F-y5QfBlWuZikfsCqFWUst0QTuJt7gHgCRwoiBl7E_oSPa0kZhTfs";
-        
-        const arcGisMap = new Map({
-          basemap: "arcgis-topographic" // Basemap layer // 
-        });
-  
-        const View = new MapView({
-          map: arcGisMap,
-          center: [-118.805, 34.027],
-          zoom: 13, // scale: 72223.819286//
-          container: "arcGisMap",
-        });
-
-    });
-
-    //eigen edivisiekaart//
+       //Arcgis kaart eredivisie//
 
     require(["esri/config","esri/WebMap","esri/views/MapView","esri/widgets/ScaleBar","esri/widgets/Legend"], function(esriConfig, WebMap, MapView, ScaleBar, Legend) {
     
     esriConfig.apiKey = "AAPK6aee547fed8743aab40dfa36970a3933nhI5nmaqiL8F-y5QfBlWuZikfsCqFWUst0QTuJt7gHgCRwoiBl7E_oSPa0kZhTfs";
     
-    const webMap = new webMap({
+    const clubkaart = new WebMap({
         portalItem: {
-          id: "b5372c88624e4367808bb8eb85823ad1"
+          id: "fb22eda5e1b840babbfad7a27994d11d"
         }
       });
     
     const view = new MapView({
-        container: "viewDiv",
-        map: webMap
+      
+        container: "clubkaart",
+        map: clubkaart
     });})
+
+
+    // wms laag met geoserver //
+
+    L.tileLayer.wms('http://localhost:8001/geoserver/ows' , {
+      'layers' : 'nyc:gemeente_2021_v1',
+      'styles' : 'polygon' ,
+      'srs' : 'EPSG:28992' , 
+      'format': 'image/png' , 
+      'opacity': 0.5
+    }).addTo(leafmap);

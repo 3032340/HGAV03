@@ -72,7 +72,7 @@ crossorigin=""></script>
                     <img src="img/feyenoord.png" alt="feyenoordfoto">
                 </p>
                 <p>Az
-                    <img src="img/az.png" alt="azfoto">
+                    <img id="az" src="img/az.png" alt="azfoto">
                 </p>
 
             </div>
@@ -80,16 +80,19 @@ crossorigin=""></script>
         
         <div class="locatie">
             <div id="locatietekst">
-            <p>Stadion locaties weergegeven.</p>
+            <p>In de kaart hiernaast staan de locaties weergegeven van verschillende stadions in Nederland</p> </div>
+            <div id="clubkaart"></div>
         </div>
 
-        <div id="arcGisMap"></div>
-
-       <div id="viewDiv"></div>
+        <p>Hieronder komen 2 visualisaties van de hoeveelheid bezoekers per club en wat het vermogen is van de club.</p>
 
 
 
-    </body>
+
+        <iframe title="Capaciteit per Eredivisie stadion" aria-label="Bar Chart" id="capaciteit" src="https://datawrapper.dwcdn.net/7TGGz/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="543" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+        </script>
+    
+</body>
 
     <script src="https://js.arcgis.com/4.26/"></script>
     <script src="JS/Maps.js"></script>
