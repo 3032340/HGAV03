@@ -17,6 +17,7 @@ crossorigin=""></script>
 <script src="https://unpkg.com/@terraformer/wkt"></script>
 
 <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
+<link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
 
 </head>
 
@@ -87,18 +88,26 @@ crossorigin=""></script>
         <p>Hieronder komen 2 visualisaties van de hoeveelheid bezoekers per club en wat het vermogen is van de club.</p>
 
 
-       
-
-        <iframe title="Capaciteit per Eredivisie stadion" aria-label="Bar Chart" id="capaciteit" src="https://datawrapper.dwcdn.net/7TGGz/1/" scrolling="yes" frameborder="0" style="width: 0; min-width: 50% !important; border: none;" height="543" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
-        </script>
+    <div class="visualisatie">  
     
-    <div class="infogram-embed" data-id="05572fac-67eb-4671-8b37-ea6d1d6e17ef" data-type="interactive" data-title="Race bar"></div><script>!function(e,i,n,s){var t="InfogramEmbeds",d=e.getElementsByTagName("script")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement("script");o.async=1,o.id=n,o.src="https://e.infogram.com/js/dist/embed-loader-min.js",d.parentNode.insertBefore(o,d)}}(document,0,"infogram-async");</script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/05572fac-67eb-4671-8b37-ea6d1d6e17ef" style="color:#989898!important;text-decoration:none!important;" target="_blank">Race bar</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+        <iframe title="Capaciteit per Eredivisie stadion" aria-label="Bar Chart" id="capaciteit" src="https://datawrapper.dwcdn.net/7TGGz/1/" scrolling="yes" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="543" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+        </script>
+        
+        <div class="infogram-embed" data-id="05572fac-67eb-4671-8b37-ea6d1d6e17ef" data-type="interactive" data-title="Race bar"></div><script>!function(e,i,n,s){var t="InfogramEmbeds",d=e.getElementsByTagName("script")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement("script");o.async=1,o.id=n,o.src="https://e.infogram.com/js/dist/embed-loader-min.js",d.parentNode.insertBefore(o,d)}}(document,0,"infogram-async");</script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/05572fac-67eb-4671-8b37-ea6d1d6e17ef" style="color:#989898!important;text-decoration:none!important;" target="_blank">Race bar</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+   
+    </div>
+    
+
+            <div id="maplibrekaart"></div>
+
 
 
 </body>
 
+    <script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
     <script src="https://js.arcgis.com/4.26/"></script>
     <script src="JS/Maps.js"></script>
+    
   
 
 </html>

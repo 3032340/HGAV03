@@ -159,5 +159,24 @@ nav ul li a{
     justify-self: stretch;
 }
 
+/*Visualisaties naast elkaar */
+
+.visualisatie{
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.infogram-embed{
+    margin: 40px;
+    justify-self: stretch;
+}
+
+
 /* Visualisaties*/
 
+#maplibrekaart{
+    height: 500px;
+    width: 500px;
+}

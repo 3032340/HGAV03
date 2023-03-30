@@ -89,3 +89,13 @@ fetch(mijnEersteAPIrequest, {})
       'format': 'image/png' , 
       'opacity': 0.5
     }).addTo(leafmap);
+
+
+    // maplibre kaart
+
+    var maplibrekaart = new maplibregl.Map({
+    container: 'maplibrekaart',
+    style: './JS/maplibre.json', // stylesheet location
+    center: [5.3896944, 52.1562499], // starting position [lng, lat]
+    zoom: 6 // starting zoom
+    });
