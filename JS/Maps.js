@@ -115,4 +115,12 @@ fetch(mijnEersteAPIrequest, {})
         .setPopup(popup)
         .addTo(maplibrekaart);
 
-       
+    const openlayerMap= new ol.Map({
+            target:'openlayers-map',
+            layers:[new ol.layer.Tile({source: new ol.source.OSM()
+            })],
+            view: new ol.View({
+            center: ol.proj.fromLonLat([5.2213, 51.7160]),
+            zoom:8
+            })
+            });       

@@ -109,7 +109,7 @@ nav ul li a{
 
 .stadiontekst{
     background-color: blue;
-    display: flex;
+    
 }
 
 #gemeentetekst{
@@ -190,6 +190,7 @@ nav ul li a{
 
 /* Visualisaties*/
 
-#maplibrekaart{
-   
+.openlayerMap{
+    height: 200px;
+    width: 200px;
 }
