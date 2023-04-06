@@ -78,8 +78,20 @@ nav ul li a{
 
 .info-eredivisie{
     background-color: rgb(199, 205, 212);
-    height: 350px;
-    margin-top: 0px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+#maplibrekaart{
+    margin: 40px;
+    justify-self: stretch;
+}
+
+.eredivisietekst{
+    background-color: aquamarine;
+    display: flex;
 }
 
 #leafletmap { 
@@ -157,6 +169,8 @@ nav ul li a{
 #clubkaart{
     margin: 40px;
     justify-self: stretch;
+    
+    
 }
 
 /*Visualisaties naast elkaar */
@@ -177,6 +191,5 @@ nav ul li a{
 /* Visualisaties*/
 
 #maplibrekaart{
-    height: 500px;
-    width: 500px;
+   
 }

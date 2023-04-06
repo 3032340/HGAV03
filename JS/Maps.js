@@ -1,6 +1,6 @@
 // leaflet kaart
 
-var leafmap = L.map('leafletmap').setView([51.505, -0.09], 13);
+var leafmap = L.map('leafletmap').setView([51.505, -0.09], 11);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 maxZoom: 19,
@@ -76,7 +76,9 @@ fetch(mijnEersteAPIrequest, {})
     const view = new MapView({
       
         container: "clubkaart",
-        map: clubkaart
+        map: clubkaart,
+        zoom: 6,
+        
     });})
 
 
@@ -97,5 +99,20 @@ fetch(mijnEersteAPIrequest, {})
     container: 'maplibrekaart',
     style: './JS/maplibre.json', // stylesheet location
     center: [5.3896944, 52.1562499], // starting position [lng, lat]
-    zoom: 6 // starting zoom
+    zoom: 6, // starting zoom
+    maxZoom: 9,
+    minZoom: 6,
     });
+
+    const popup = new maplibregl.Popup({ offset: 25 }).setText(
+        'Gemeente Zeist'
+    );
+    
+    const marker = new maplibregl.Marker({
+        color: '#ffff'
+    })
+        .setLngLat([5.2332526, 52.0906015])
+        .setPopup(popup)
+        .addTo(maplibrekaart);
+
+       
