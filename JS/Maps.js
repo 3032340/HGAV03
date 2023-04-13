@@ -1,10 +1,8 @@
 // leaflet kaart
 
-var leafmap = L.map('leafletmap').setView([51.505, -0.09], 12);
+var leafmap = L.map('leafletmap').setView([51.505, -0.09], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-maxZoom: 17,
-zoom: 6,
 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(leafmap);
 
@@ -131,3 +129,4 @@ const openlayersMap= new ol.Map({
     })
     
     });
+
