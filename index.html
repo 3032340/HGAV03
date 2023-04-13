@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
     <link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+
 </head>
 
 <body>
@@ -44,7 +47,7 @@
 
 
     <div class="info-eredivisie">
-        <div class="eredivisietekst">
+        <div id="eredivisietekst">
         <p>Hier komt info te staan over de Eredivisie.</p>
     </div>
         <div id="maplibrekaart"></div>
@@ -105,22 +108,24 @@
         <div class="infogram-embed" data-id="05572fac-67eb-4671-8b37-ea6d1d6e17ef" data-type="interactive"
             data-title="Race bar"></div>
         <script>!function (e, i, n, s) { var t = "InfogramEmbeds", d = e.getElementsByTagName("script")[0]; if (window[t] && window[t].initialized) window[t].process && window[t].process(); else if (!e.getElementById(n)) { var o = e.createElement("script"); o.async = 1, o.id = n, o.src = "https://e.infogram.com/js/dist/embed-loader-min.js", d.parentNode.insertBefore(o, d) } }(document, 0, "infogram-async");</script>
-        <div
-            style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px">
-            <a href="https://infogram.com/05572fac-67eb-4671-8b37-ea6d1d6e17ef"
-                style="color:#989898!important;text-decoration:none!important;" target="_blank">Race bar</a><br><a
-                href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;"
-                target="_blank" rel="nofollow">Infogram</a>
+        
         </div>
 
-    </div>
+    <p>hhhhhhhh</p>
 
-    <div class="openlayerMap"></div>
-    
+    <div class="locatie">
+        
+        <div id="openlayers-map"></div>
+
+        <div id="locatietekst">
+            <p>De afstand de het grootste is van twee verschillende voetbalclubs</p>
+        </div>
+    </div>
 
 
 
 </body>
+
 
 <script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
 <script src="https://js.arcgis.com/4.26/"></script>

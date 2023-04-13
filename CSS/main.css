@@ -147,8 +147,6 @@ nav ul li a{
    
 }
 
-
-
 /* Stadion locaties tekst */
 
 .locatie{
@@ -188,9 +186,9 @@ nav ul li a{
 }
 
 
-/* Visualisaties*/
+/* openlayerskaart */
 
-.openlayerMap{
-    height: 200px;
-    width: 200px;
+#openlayers-map{
+    margin: 40px;
+    justify-self: stretch;
 }
