@@ -116,17 +116,93 @@ fetch(mijnEersteAPIrequest, {})
 
 //Openlayerskaart//
 
-const openlayersMap= new ol.Map({
-
-    target:'openlayers-map',
-    layers:[
-    new ol.layer.Tile({
-    source: new ol.source.OSM()
-    })
+const openlayersMap = new ol.Map({
+    target: 'openlayers-map',
+    layers: [
+      new ol.layer.Tile({
+        source: new ol.source.OSM()
+      })
     ],
     view: new ol.View({
-    center: ol.proj.fromLonLat([5.2213, 51.7160]), zoom:8
+      center: ol.proj.fromLonLat([5.2213, 51.7160]),
+      zoom: 8
     })
-    
-    });
+  });
+  
+  // Coördinaten van de stadions
+  const fcGroningenCoords = ol.proj.fromLonLat([6.581390, 53.219170]);
+  const rodaJCCoords = ol.proj.fromLonLat([6.002840, 50.899170]);
+  
+  // Lijn toevoegen van FC Groningen naar Roda JC
+  const line = new ol.Feature({
+    geometry: new ol.geom.LineString([
+      fcGroningenCoords,
+      rodaJCCoords
+    ])
+  });
+  
+  // Afstand tussen de twee stadions berekenen
+  const distance = ol.sphere.getDistance(fcGroningenCoords, rodaJCCoords) / 1000; // in kilometers
+  
+  // Marker met label voor FC Groningen
+  const fcGroningenMarker = new ol.Feature({
+    geometry: new ol.geom.Point(fcGroningenCoords),
+    name: 'FC Groningen'
+  });
+  
+  // Marker met label voor Roda JC
+  const rodaJCMarker = new ol.Feature({
+    geometry: new ol.geom.Point(rodaJCCoords),
+    name: 'Roda JC'
+  });
+  
+  // Laag toevoegen met markers en lijn
+  const vectorLayer = new ol.layer.Vector({
+    source: new ol.source.Vector({
+      features: [line, fcGroningenMarker, rodaJCMarker]
+    }),
+    style: function(feature) {
+      if (feature.getGeometry().getType() === 'LineString') {
+        return new ol.style.Style({
+          stroke: new ol.style.Stroke({
+            color: '#ffcc33',
+            width: 5
+          })
+        });
+      } else {
+        return new ol.style.Style({
+          image: new ol.style.Circle({
+            radius: 6,
+            fill: new ol.style.Fill({ color: 'red' }),
+            stroke: new ol.style.Stroke({
+              color: [255,255,255], width: 2
+            })
+          }),
+          text: new ol.style.Text({
+            text: feature.get('name'),
+            offsetY: -15,
+            fill: new ol.style.Fill({ color: 'black' }),
+            stroke: new ol.style.Stroke({
+              color: [255,255,255], width: 2
+            })
+          })
+        });
+      }
+    }
+  });
+  
+  openlayersMap.addLayer(vectorLayer);
+  
+  // Afstand weergeven op de kaart
+  const distanceText = document.createElement('div');
+  distanceText.innerHTML = 'Afstand tussen FC Groningen en Roda JC: ' + distance.toFixed(2) + ' km';
+  distanceText.style.position = 'absolute';
+  distanceText.style.bottom = '10px';
+  distanceText.style.left = '10px';
+  openlayersMap.getViewport().appendChild(distanceText);
+
+      
+      
+
+      
 
